@@ -1,0 +1,22 @@
+<head>
+    <title>Todo List</title>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>Welcom {{currentUser.username}}</h1><br>
+        <h3>Todo List ({{incompleteCount}})</h3>
+        <label class="hide-completed">
+            <input type="checkbox" checked="{{hideCompleted}}" />
+            Hide Completed Tasks
+        </label>
+        {{> loginButtons}}
+        {{#if currentUser}}
+            {{> addTask}}
+        {{/if}}
+    </header>
+
+    {{> taskList}}
+</div>
+</body>
